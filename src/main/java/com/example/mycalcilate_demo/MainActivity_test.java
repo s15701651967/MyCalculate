@@ -4,6 +4,7 @@ package com.example.mycalcilate_demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;
@@ -36,26 +38,16 @@ public class MainActivity_test extends AppCompatActivity {
     public double pi=4*Math.atan(1);
     //标记是否清零
     public boolean clean_tag=false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
-        if(this.getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-
-        {
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_test);
             Log.i("info", "landscape"); // 横屏
 
-        }  else if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_PORTRAIT)
-
-        {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main_test);
-            Log.i("info", "portrait"); // 竖屏
-
-        }
 
         Button button = findViewById(R.id.Return2);
         button.setOnClickListener(new View.OnClickListener() {
@@ -240,7 +232,9 @@ public class MainActivity_test extends AppCompatActivity {
                     input.setText(str + '/');
                 }
                 else{
-                    tip.setText("别把/放第一位");
+                    Toast.makeText(MainActivity_test.this, "别把/放第一位", Toast.LENGTH_SHORT).show();
+
+                    //tip.setText("别把/放第一位");
                     input.setText("0");
                 }
             }
@@ -253,7 +247,7 @@ public class MainActivity_test extends AppCompatActivity {
                     input.setText(str+'*');
                 }
                 else{
-                    tip.setText("别把*放第一位");
+                    Toast.makeText(MainActivity_test.this, "别把*放第一位", Toast.LENGTH_SHORT).show();
                     input.setText("0");
                 }
             }
@@ -266,6 +260,8 @@ public class MainActivity_test extends AppCompatActivity {
                     input.setText(str+'-');
                 }
                 else{
+                    Toast.makeText(MainActivity_test.this, "别把-放第一位", Toast.LENGTH_SHORT).show();
+
                     input.setText("-");
                 }
             }
@@ -278,7 +274,7 @@ public class MainActivity_test extends AppCompatActivity {
                     input.setText(str+'+');
                 }
                 else{
-                    tip.setText("别把+放第一位");
+                    Toast.makeText(MainActivity_test.this, "别把+放第一位", Toast.LENGTH_SHORT).show();
                     input.setText("0");
                 }
             }
@@ -296,19 +292,23 @@ public class MainActivity_test extends AppCompatActivity {
             public void onClick(View view) {
                 if(clean_tag) {
                     String str = input.getText().toString().trim();
+
                     input.setText(str + "sin");
-                    tip.setText("sin 函数用法示例：\n" +
-                            "DEG：sin30 = 0.5      RAD：sin1 = 0.84\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "sin(cos45)，而不是sincos45");
+
+                    Toast.makeText(MainActivity_test.this, "sin 函数用法示例：" +
+                            "DEG：sin30 = 0.5      RAD：sin1 = 0.84" +
+                            "注：与其他函数一起使用时要加括号，如：" +
+                            "sin(cos45)，而不是sincos45", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     input.setText("sin");
                     clean_tag=true;
-                    tip.setText("sin 函数用法示例：\n" +
-                            "DEG：sin30 = 0.5      RAD：sin1 = 0.84\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "sin(cos45)，而不是sincos45");
+                    Toast.makeText(MainActivity_test.this, "sin 函数用法示例：" +
+                            "DEG：sin30 = 0.5      RAD：sin1 = 0.84" +
+                            "注：与其他函数一起使用时要加括号，如：" +
+                            "sin(cos45)，而不是sincos45", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -318,18 +318,22 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str = input.getText().toString().trim();
                     input.setText(str + "cos");
-                    tip.setText("cos 函数用法示例：\n" +
-                            "DEG：cos60 = 0.5      RAD：cos1 = 0.54\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "cos(sin45)，而不是cossin45");
+
+                    Toast.makeText(MainActivity_test.this, "cos 函数用法示例：\" +" +
+                            "                            \"DEG：cos60 = 0.5      RAD：cos1 = 0.54\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"cos(sin45)，而不是cossin45", Toast.LENGTH_SHORT).show();
+
+
                 }
                 else{
                     input.setText("cos");
                     clean_tag=true;
-                    tip.setText("cos 函数用法示例：\n" +
-                            "DEG：cos60 = 0.5      RAD：cos1 = 0.54\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "cos(sin45)，而不是cossin45");
+                    Toast.makeText(MainActivity_test.this, "cos 函数用法示例：\" +" +
+                            "                            \"DEG：cos60 = 0.5      RAD：cos1 = 0.54\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"cos(sin45)，而不是cossin45", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -339,18 +343,22 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str = input.getText().toString().trim();
                     input.setText(str + "tan");
-                    tip.setText("tan 函数用法示例：\n" +
-                            "DEG：tan45 = 1      RAD：tan1 = 1.55\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "tan(cos45)，而不是tancos45");
+
+                    Toast.makeText(MainActivity_test.this, "tan 函数用法示例：\" +" +
+                            "                            \"DEG：tan45 = 1      RAD：tan1 = 1.55\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"tan(cos45)，而不是tancos45", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     input.setText("tan");
                     clean_tag=true;
-                    tip.setText("tan 函数用法示例：\n" +
-                            "DEG：tan45 = 1      RAD：tan1 = 1.55\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "tan(cos45)，而不是tancos45");
+
+                    Toast.makeText(MainActivity_test.this, "tan 函数用法示例：\" +" +
+                            "                            \"DEG：tan45 = 1      RAD：tan1 = 1.55\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"tan(cos45)，而不是tancos45", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -360,16 +368,19 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str=input.getText().toString().trim();
                     input.setText(str+"log");
-                    tip.setText("log 函数用法示例：\n" +
-                            "log10 = log(5+5) = 1\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "log(tan45)，而不是logtan45" );
+
+                    Toast.makeText(MainActivity_test.this, "log 函数用法示例：\" +" +
+                            "                            \"log10 = log(5+5) = 1\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"log(tan45)，而不是logtan45", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
-                    tip.setText("log 函数用法示例：\n" +
-                            "log10 = log(5+5) = 1\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "log(tan45)，而不是logtan45");
+                    Toast.makeText(MainActivity_test.this, "log 函数用法示例：\" +" +
+                            "                            \"log10 = log(5+5) = 1\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"log(tan45)，而不是logtan45", Toast.LENGTH_SHORT).show();
+
                     clean_tag=true;
                     input.setText("");
                 }
@@ -382,17 +393,21 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str=input.getText().toString().trim();
                     input.setText(str+ln);
-                    tip.setText("ln 函数用法示例：\n" +
-                            "ln10 = le(5+5) = 2.3、lne = 1\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "ln(tan45)，而不是lntan45");
+                    Toast.makeText(MainActivity_test.this, "ln 函数用法示例：\" +" +
+                            "                            \"ln10 = le(5+5) = 2.3、lne = 1\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"ln(tan45)，而不是lntan45", Toast.LENGTH_SHORT).show();
+
+
                 }
                 else{
                     input.setText("ln");
-                    tip.setText("ln 函数用法示例：\n" +
-                            "ln10 = le(5+5) = 2.3   lne = 1\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "ln(tan45)，而不是lntan45" );
+                    Toast.makeText(MainActivity_test.this, "ln 函数用法示例：\" +" +
+                            "                            \"ln10 = le(5+5) = 2.3、lne = 1\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"ln(tan45)，而不是lntan45", Toast.LENGTH_SHORT).show();
+
+
                     clean_tag=true;
                 }
             }
@@ -403,13 +418,16 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str=input.getText().toString().trim();
                     input.setText(str+"√");
-                    tip.setText("√ 用法示例：开任意次根号\n" +
-                            "如：27开3次根为  27√3 = 3\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "(函数)√(函数) ， (n!3)√(log100) = 2.45");
+
+                    Toast.makeText(MainActivity_test.this, "√ 用法示例：开任意次根号\" +" +
+                            "                            \"如：27开3次根为  27√3 = 3\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"(函数)√(函数) ， (n!3)√(log100) = 2.45", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
-                    tip.setText("√不能放第一位");
+                    Toast.makeText(MainActivity_test.this, "√不能放第一位", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -419,14 +437,17 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str=input.getText().toString().trim();
                     input.setText(str+"^");
-                    tip.setText("^ 用法示例：开任意次平方\n" +
-                            "如：2的3次方为  2^3 = 8\n" +
-                            "注：与其他函数一起使用时要加括号，如：\n" +
-                            "(函数)√(函数) ， (n!3)^(log100) = 36");
+
+                    Toast.makeText(MainActivity_test.this, "^ 用法示例：开任意次平方\" +" +
+                            "                            \"如：2的3次方为  2^3 = 8\" +" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\" +" +
+                            "                            \"(函数)√(函数) ， (n!3)^(log100) = 36", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     input.setText("0");
-                    tip.setText("不要把^放第一位");
+                    Toast.makeText(MainActivity_test.this, "不要把^放第一位", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -436,17 +457,21 @@ public class MainActivity_test extends AppCompatActivity {
                 if(clean_tag) {
                     String str=input.getText().toString().trim();
                     input.setText(str+"!");
-                    tip.setText("n! 函数用法示例：\n "+
-                            "n!3 = n!(1+2) = 3×2×1 = 6 \n"+
-                            "注：与其他函数一起使用时要加括号，如：\n "+
-                            "n!(log1000)，而不是n!log1000");
+
+                    Toast.makeText(MainActivity_test.this, "n! 函数用法示例：\"+" +
+                            "                            \"n!3 = n!(1+2) = 3×2×1 = 6 \"+" +
+                            "                            \"注：与其他函数一起使用时要加括号，如：\"+" +
+                            "                            \"n!(log1000)，而不是n!log1000", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     input.setText("!");
-                    tip.setText("n! 函数用法示例：\n "+
-                            "n!3 = n!(1+2) = 3×2×1 = 6 \n"+
-                            "注：与其他函数一起使用时要加括号，如：\n "+
-                            "n!(log1000)，而不是n!log1000");
+
+                    Toast.makeText(MainActivity_test.this, "n! 函数用法示例：\"+" +
+                            "                            \"n!3 = n!(1+2) = 3×2×1 = 6\"+" +
+                            "                            \"注：与其他函数一起使用时要加括号，如： \"+" +
+                            "                            \"n!(log1000)，而不是n!log1000", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
@@ -512,7 +537,8 @@ public class MainActivity_test extends AppCompatActivity {
                 }
                 else{
                     input.setText("0");
-                    tip.setText("不要把.放第一位");
+                    Toast.makeText(MainActivity_test.this, "不要把.放第一位", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -567,7 +593,7 @@ public class MainActivity_test extends AppCompatActivity {
             operator = new char[MAXLEN];
             String expression = str;
             StringTokenizer expToken = new StringTokenizer(expression,"+-*/()sctgl!√^");
-            //以"+-*/()sctgl!√^"分隔，中间的即为数字
+            //以"+-*/()sctgl!√^"分隔，中间的即为数字,用于分隔字符串
             int i = 0;
             while (i < expression.length()) {
                 ch = expression.charAt(i);
@@ -679,7 +705,6 @@ public class MainActivity_test extends AppCompatActivity {
                                     break;
                                 //cos
                                 case 'c':
-
                                     number[topNum-1] = Math.cos((number[topNum-1]/180)*pi);
                                     topNum++;
                                     break;
@@ -830,7 +855,8 @@ public class MainActivity_test extends AppCompatActivity {
             }
             //输出最终结果
             input.setText(String.valueOf(FP(number[0])));
-            tip.setText("计算完毕，要继续请按归零键 C");
+            Toast.makeText(MainActivity_test.this, "计算完毕，要继续请按归零键 C", Toast.LENGTH_SHORT).show();
+
         }
 
         /*
@@ -871,12 +897,13 @@ public class MainActivity_test extends AppCompatActivity {
                     message = "值太大了，超出范围";
             }
             input.setText("\""+str+"\""+": "+message);
-            tip.setText(message+"\n"+"计算完毕，要继续请按归零键 C");
+            Toast.makeText(MainActivity_test.this, "计算完毕，要继续请按归零键 C", Toast.LENGTH_SHORT).show();
+
         }
     }
 
 
-    private int TTO(String str) {
+    private int TTO(String str) {//回退
         if((str.charAt(str.length() - 1) == 'n' &&
                 str.charAt(str.length() - 2) == 'i' &&
                 str.charAt(str.length() - 3) == 's') ||

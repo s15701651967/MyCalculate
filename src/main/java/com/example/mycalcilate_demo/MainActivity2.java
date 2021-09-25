@@ -16,11 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import androidx.annotation.Nullable;
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
-    private Button simple;
-    private Button science;
-    private Button length;
-    private Button scale;
-    private Button volume;
     /*
        实例化数字0-9
         */
@@ -63,30 +58,6 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
         setContentView(R.layout.activity_main2);
-
-//        if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE)
-//
-//        {
-//
-//            Log.i("info", "landscape"); // 横屏
-//            setContentView(R.layout.activity_main);
-//
-//        }  else
-//            if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_PORTRAIT)
-//
-//        {
-//
-//            Log.i("info", "portrait"); // 竖屏
-//            setContentView(R.layout.length);
-//
-//        }
-//int orientation=getResources().getConfiguration().orientation;
-//if(orientation== Configuration.ORIENTATION_LANDSCAPE){
-//    setContentView(R.layout.activity_main);
-//}
-//else if(orientation==Configuration.ORIENTATION_PORTRAIT){
-//    setContentView(R.layout.length);
-//}
 
         //结果
         editText1=(EditText)findViewById(R.id.input);
@@ -135,36 +106,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         n_point.setOnClickListener((View.OnClickListener)this);
         n_Del.setOnClickListener((View.OnClickListener)this);
         n_Clear.setOnClickListener((View.OnClickListener)this);
-
-        simple=findViewById(R.id.simple);
-        science=findViewById(R.id.science);
-        length=findViewById(R.id.length);
-        scale=findViewById(R.id.scale);
-        volume=findViewById(R.id.volume);
-
-        //simple.setOnClickListener((View.OnClickListener)simple);
     }
-    //public View.OnClickListener simple=new View.OnClickListener() {
-//    @Override
-//    public void onClick(View view) {
-//        Intent intent=new Intent();
-//        intent.setClass(MainActivity.this,menu.class);
-//    }
-//};
-    //    @SuppressLint("ResourceType")
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.layout.activity_main,menu);
-//        SubMenu length=menu.addSubMenu("长度");
-//        SubMenu scale=menu.addSubMenu("长度");
-//        SubMenu volume=menu.addSubMenu("长度");
-//
-//        getMenuInflater().inflate(R.layout.length,length);
-//        getMenuInflater().inflate(R.layout.scale,scale);
-//        getMenuInflater().inflate(R.layout.volume,volume);
-//
-//        return super.onCreateOptionsMenu(menu);
-//    }
+
     public void onClick(View v) {
         String string=editText1.getText().toString();
         switch (v.getId()){
@@ -241,6 +184,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         String s4="÷";
         String s5=".";
         if(a!=0){
+
             String s=text.substring(a-1,a);//获取用户输入的符号
             String s_num=text.substring(0,a-1);//获取用户输入的数字
             if(s1.equals(s)||s2.equals(s)||s3.equals(s)||s4.equals(s)||s5.equals(s)){
