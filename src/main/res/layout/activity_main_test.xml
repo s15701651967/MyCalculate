@@ -43,9 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/input"
         android:layout_alignParentLeft="true"
-        android:text="sin"
+        android:minWidth="120dp"
         android:minHeight="0dp"
-        android:minWidth="120dp"/>
+        android:text="sin" />
 
     <Button
         android:id="@+id/cos"
@@ -313,6 +313,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/num_0"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="提示：欢迎使用！" />
 
 </RelativeLayout>

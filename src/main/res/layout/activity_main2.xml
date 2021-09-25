@@ -202,12 +202,5 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         />
-    <Button android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="HELP"
-        android:id="@+id/bt_help"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        />
+
 </GridLayout>

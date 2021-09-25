@@ -5,42 +5,49 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/e1_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="km"/>
 
     <EditText
+        android:id="@+id/e2_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:hint="m"/>
+        android:hint="m  请在此输入" />
     <EditText
+        android:id="@+id/e3_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="dm"/>
     <EditText
+        android:id="@+id/e4_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="cm"/>
     <EditText
+        android:id="@+id/e5_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="mm"/>
 
     <EditText
+        android:id="@+id/e6_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:hint="μm"/>
+        android:hint="foot"/>
     <EditText
+        android:id="@+id/e7_l"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:hint="nm"/>
+        android:hint="inch"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
             android:layout_marginLeft="3dp"
-            android:id="@+id/btn7"
+            android:id="@+id/btn7_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="7"
@@ -48,7 +55,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btn8"
+            android:id="@+id/btn8_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="8"
@@ -56,7 +63,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btn9"
+            android:id="@+id/btn9_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="9"
@@ -71,7 +78,7 @@
         android:orientation="horizontal">
         <Button
             android:layout_marginLeft="5dp"
-            android:id="@+id/btn4"
+            android:id="@+id/btn4_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="4"
@@ -79,7 +86,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btn5"
+            android:id="@+id/btn5_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="5"
@@ -87,7 +94,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btn6"
+            android:id="@+id/btn6_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="6"
@@ -95,7 +102,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btnC"
+            android:id="@+id/btnC_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="C"
@@ -109,7 +116,7 @@
         android:orientation="horizontal">
         <Button
             android:layout_marginLeft="5dp"
-            android:id="@+id/btn1"
+            android:id="@+id/btn1_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="1"
@@ -117,7 +124,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btn2_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="2"
@@ -125,7 +132,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btn003"
+            android:id="@+id/btn3_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="3"
@@ -133,7 +140,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btnDel"
+            android:id="@+id/btnDel_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="←"
@@ -145,17 +152,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
-            android:layout_marginLeft="5dp"
-            android:id="@+id/btnpoint"
+            android:id="@+id/btnpoint_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
-            android:text="."
-            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
             android:padding="5dp"
-            />
+            android:text="."
+            android:textSize="20dp" />
+
         <Button
-            android:id="@+id/btn0"
+            android:id="@+id/btn0_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="0"
@@ -163,7 +171,7 @@
             android:padding="5dp"
             />
         <Button
-            android:id="@+id/btnequal"
+            android:id="@+id/btnequal_l"
             android:layout_width="88dp"
             android:layout_height="80dp"
             android:text="="
@@ -174,7 +182,8 @@
 
 
     <Button
+        android:id="@+id/btnback_l"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="长度转换"/>
+        android:text="返回菜单"/>
 </LinearLayout>
